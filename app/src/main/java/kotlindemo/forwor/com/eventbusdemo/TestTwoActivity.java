@@ -47,7 +47,7 @@ public class TestTwoActivity extends AppCompatActivity {
     protected void onDestroy() {//第五步:移除粘性事件
        // EventBus.getDefault().removeAllStickyEvents();
 
-        //官方推荐此法移除:更好地检查事件是否实际发布过此事件
+        //官方推荐此法移除:更好地检查事件是否实际发布过此事件,用这个更好
         StickyEvent stickyEvent = EventBus.getDefault().removeStickyEvent(StickyEvent.class);
         if (stickyEvent != null) {
             EventBus.getDefault().removeStickyEvent(stickyEvent);
