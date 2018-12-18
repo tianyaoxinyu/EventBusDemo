@@ -2,6 +2,7 @@ package kotlindemo.forwor.com.eventbusdemo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.greenrobot.eventbus.EventBus;
@@ -9,6 +10,7 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import kotlindemo.forwor.com.eventbusdemo.entity.StickyEvent;
+import kotlindemo.forwor.com.eventbusdemo.utils.SpanUtils;
 
 public class TestOneActivity extends AppCompatActivity {
 
@@ -18,6 +20,8 @@ public class TestOneActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test_one);
         //第三步:Activity创建时注册
         EventBus.getDefault().register(this);
+        TextView tv = findViewById(R.id.tv);
+        SpanUtils.newInstance().append("温馨提示：").setForegroundColor(getResources().getColor(R.color.colorAccent)).setFontSize(12,true).append("\n\n提交后").setForegroundColor(getResources().getColor(R.color.colorPrimary)).append("温馨提示").setForegroundColor(getResources().getColor(R.color.colorPrimaryDark)).setFontSize(16).append("请对其他规格进行价格设置，否则系统默认所有规格的价格一致。").create().build(tv);
     }
 
     /**

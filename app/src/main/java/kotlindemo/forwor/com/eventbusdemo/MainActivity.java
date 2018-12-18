@@ -9,6 +9,7 @@ import android.widget.TextView;
 import org.greenrobot.eventbus.EventBus;
 
 import kotlindemo.forwor.com.eventbusdemo.entity.StickyEvent;
+import kotlindemo.forwor.com.eventbusdemo.utils.AppUtil;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        AppUtil.initialize(getApplication());
         findViewById(R.id.tv_send_msg).setOnClickListener(this);
         findViewById(R.id.tv_send_msg_two).setOnClickListener(this);
     }
