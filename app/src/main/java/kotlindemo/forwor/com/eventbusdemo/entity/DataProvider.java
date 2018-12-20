@@ -22,7 +22,7 @@ public class DataProvider {
 
     public static List<MultiItemEntity> getSpecifics() {
         ArrayList<MultiItemEntity> res = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 8; i++) {
             SpcificTitle lv0 = new SpcificTitle("title" + i);
             for (int j = 0; j < 5; j++) {
                 lv0.addSubItem(new Spcific("content" + j,false));

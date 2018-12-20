@@ -5,15 +5,14 @@ import android.os.Build;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseSectionQuickAdapter;
+
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
-import com.chad.library.adapter.base.entity.SectionEntity;
 
 import kotlindemo.forwor.com.eventbusdemo.adapter.FilterSpcificAdapter;
 
@@ -84,13 +83,17 @@ public class GridMuiltItemDecoration extends RecyclerView.ItemDecoration{
             if (visualPos % spanCount == 1) {
                 //第一列
                 outRect.left = sectionEdgeHPaddingPx;
+                Log.e("left",outRect.left + "");
                 outRect.right = eachItemHPaddingPx - sectionEdgeHPaddingPx;
             } else if (visualPos % spanCount == 0) {
                 //最后一列
                 outRect.left = eachItemHPaddingPx - sectionEdgeHPaddingPx;
                 outRect.right = sectionEdgeHPaddingPx;
+                Log.e("left1", outRect.left + "");
             } else {
-                outRect.left = gapHSizePx - preRect.right;
+                //此处需要固定，根据日志打印情况取合适的固定值，以免权重下的RecyclerView下面有布局时导致条目间隔改变
+                outRect.left = 45;
+                Log.e("left2",outRect.left + "");
                 outRect.right = eachItemHPaddingPx - outRect.left;
             }
 
