@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="spcificContent"
+            type="kotlindemo.forwor.com.eventbusdemo.entity.SpcificCombin"/>
+    </data>
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/slt_rect_cr2_primary_gray"
+        android:gravity="center"
+        android:minWidth="110dp"
+        android:minHeight="30dp"
+        android:textColor="#333333"
+        android:textSize="16sp" />
+</layout>
+

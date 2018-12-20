@@ -20,11 +20,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         AppUtil.initialize(getApplication());
         findViewById(R.id.tv_send_msg).setOnClickListener(this);
         findViewById(R.id.tv_send_msg_two).setOnClickListener(this);
+        findViewById(R.id.testDataBinding).setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {//第二步:发送粘性事件
         switch (v.getId()) {
+            case R.id.testDataBinding:
+                startActivity(new Intent(MainActivity.this,RecyclerViewActivity.class));
+                break;
             case R.id.tv_send_msg:
                 EventBus.getDefault().postSticky(new StickyEvent("one","我是一号消息"));
                 startActivity(new Intent(MainActivity.this,TestOneActivity.class));
