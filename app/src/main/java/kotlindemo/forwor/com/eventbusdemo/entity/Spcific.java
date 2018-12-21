@@ -2,7 +2,7 @@ package kotlindemo.forwor.com.eventbusdemo.entity;
 
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 
-import kotlindemo.forwor.com.eventbusdemo.adapter.FilterSpcificAdapter;
+import kotlindemo.forwor.com.eventbusdemo.adapter.FilterSpecificAdapter;
 
 /**
  * Created by Myy on 2018/12/20 15:41
@@ -34,6 +34,6 @@ public class Spcific implements MultiItemEntity {
 
     @Override
     public int getItemType() {
-        return FilterSpcificAdapter.CONTENT;
+        return FilterSpecificAdapter.CONTENT;
     }
 }

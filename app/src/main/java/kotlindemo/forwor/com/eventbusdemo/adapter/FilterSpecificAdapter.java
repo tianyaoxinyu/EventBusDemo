@@ -16,13 +16,13 @@ import kotlindemo.forwor.com.eventbusdemo.entity.SpcificTitle;
 /**
  * Created by Myy on 2018/12/20 15:44
  */
-public class FilterSpcificAdapter extends BaseMultiItemQuickAdapter<MultiItemEntity,BaseViewHolder> {
+public class FilterSpecificAdapter extends BaseMultiItemQuickAdapter<MultiItemEntity,BaseViewHolder> {
     public static final int TITLE = 0;
     public static final int CONTENT = 1;
     /**
      * @param data 数据集合
      */
-    public FilterSpcificAdapter(List<MultiItemEntity> data) {
+    public FilterSpecificAdapter(List<MultiItemEntity> data) {
         super(data);
         addItemType(TITLE,R.layout.item_rcl_specif_spac_title);
         addItemType(CONTENT,R.layout.item_rcl_specif_spac_content);

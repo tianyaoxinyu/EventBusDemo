@@ -14,7 +14,7 @@ import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 
-import kotlindemo.forwor.com.eventbusdemo.adapter.FilterSpcificAdapter;
+import kotlindemo.forwor.com.eventbusdemo.adapter.FilterSpecificAdapter;
 
 /**
  * Created by Myy on 2018/12/20 17:31
@@ -57,7 +57,7 @@ public class GridMuiltItemDecoration extends RecyclerView.ItemDecoration{
             int position = parent.getChildAdapterPosition(view);
             MultiItemEntity entity = adapter.getItem(position);
 
-            if (entity != null && entity.getItemType() == FilterSpcificAdapter.TITLE) {
+            if (entity != null && entity.getItemType() == FilterSpecificAdapter.TITLE) {
                 //不处理header
                 isPreItemHeader = true;
                 outRect.set(0,0,0,0);
@@ -134,7 +134,7 @@ public class GridMuiltItemDecoration extends RecyclerView.ItemDecoration{
         MultiItemEntity entity = null;
         for (int i = curPos + 1; i < count; i++) {
             entity = adapter.getItem(i);
-            if (entity != null && entity.getItemType() == FilterSpcificAdapter.TITLE) {
+            if (entity != null && entity.getItemType() == FilterSpecificAdapter.TITLE) {
                 return i - 1;
             }
         }

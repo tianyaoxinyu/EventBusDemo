@@ -1,21 +1,14 @@
 package kotlindemo.forwor.com.eventbusdemo;
 
-import android.app.Activity;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.util.Log;
 
-import java.util.HashMap;
-
-import kotlindemo.forwor.com.eventbusdemo.adapter.FilterSpcificAdapter;
+import kotlindemo.forwor.com.eventbusdemo.adapter.FilterSpecificAdapter;
 import kotlindemo.forwor.com.eventbusdemo.adapter.SpcificAdapter;
 import kotlindemo.forwor.com.eventbusdemo.databinding.ActivityRecyclerSearchViewBinding;
-import kotlindemo.forwor.com.eventbusdemo.databinding.ActivityRecyclerViewBinding;
-import kotlindemo.forwor.com.eventbusdemo.decoration.GridMuiltItemDecoration;
-import kotlindemo.forwor.com.eventbusdemo.decoration.GridSectionAverageGapItemDecoration;
-import kotlindemo.forwor.com.eventbusdemo.decoration.RecyclerViewSpacesItemDecoration;
 import kotlindemo.forwor.com.eventbusdemo.entity.DataProvider;
 
 /**
@@ -24,19 +17,19 @@ import kotlindemo.forwor.com.eventbusdemo.entity.DataProvider;
 public class RecyclerViewActivity extends AppCompatActivity {
     private ActivityRecyclerSearchViewBinding mDataBinding;
     private SpcificAdapter spcificAdapter;
-    private FilterSpcificAdapter mAdapter;
+    private FilterSpecificAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mDataBinding = DataBindingUtil.setContentView(this, R.layout.activity_recycler_search_view);
         Log.e("dataBinding", "" + mDataBinding);
-        mAdapter = new FilterSpcificAdapter(DataProvider.getSpecifics());
+        mAdapter = new FilterSpecificAdapter(DataProvider.getSpecifics());
         final GridLayoutManager manager = new GridLayoutManager(this,2);
         manager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {
-                return mAdapter.getItemViewType(position) == FilterSpcificAdapter.CONTENT ? 1 : manager.getSpanCount();
+                return mAdapter.getItemViewType(position) == FilterSpecificAdapter.CONTENT ? 1 : manager.getSpanCount();
             }
         });
         mDataBinding.rclSpecification.setAdapter(mAdapter);
