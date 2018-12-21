@@ -1,5 +1,6 @@
 package kotlindemo.forwor.com.eventbusdemo;
 
+import android.app.Activity;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import java.util.HashMap;
 
 import kotlindemo.forwor.com.eventbusdemo.adapter.FilterSpcificAdapter;
 import kotlindemo.forwor.com.eventbusdemo.adapter.SpcificAdapter;
+import kotlindemo.forwor.com.eventbusdemo.databinding.ActivityRecyclerSearchViewBinding;
 import kotlindemo.forwor.com.eventbusdemo.databinding.ActivityRecyclerViewBinding;
 import kotlindemo.forwor.com.eventbusdemo.decoration.GridMuiltItemDecoration;
 import kotlindemo.forwor.com.eventbusdemo.decoration.GridSectionAverageGapItemDecoration;
@@ -20,14 +22,14 @@ import kotlindemo.forwor.com.eventbusdemo.entity.DataProvider;
  * Created by Myy on 2018/12/19 16:35
  */
 public class RecyclerViewActivity extends AppCompatActivity {
-    private ActivityRecyclerViewBinding mDataBinding;
+    private ActivityRecyclerSearchViewBinding mDataBinding;
     private SpcificAdapter spcificAdapter;
     private FilterSpcificAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mDataBinding = DataBindingUtil.setContentView(this, R.layout.activity_recycler_view);
+        mDataBinding = DataBindingUtil.setContentView(this, R.layout.activity_recycler_search_view);
         Log.e("dataBinding", "" + mDataBinding);
         mAdapter = new FilterSpcificAdapter(DataProvider.getSpecifics());
         final GridLayoutManager manager = new GridLayoutManager(this,2);
@@ -40,7 +42,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
         mDataBinding.rclSpecification.setAdapter(mAdapter);
         mDataBinding.rclSpecification.setLayoutManager(manager);
 
-        mDataBinding.rclSpecification.addItemDecoration(new GridMuiltItemDecoration(0, 15, 15, 15));
+/*        mDataBinding.rclSpecification.addItemDecoration(new GridMuiltItemDecoration(0, 15, 15, 15));*/
         mAdapter.expandAll();
       /*  mDataBinding.rclSpecification.addItemDecoration(new GridSectionAverageGapItemDecoration(0, 15, 15, 15));
         spcificAdapter = new SpcificAdapter(R.layout.item_rcl_specif_content, R.layout.item_rcl_specif_title, DataProvider.getSpcificCombinData());
