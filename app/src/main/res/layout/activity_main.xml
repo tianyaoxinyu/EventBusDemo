@@ -39,6 +39,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="36dp"
         android:text="dataBinding"
+        android:background="@drawable/slt_bg_btn_rect_cr2dp_red"
         app:layout_constraintBottom_toTopOf="@+id/tv_send_msg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

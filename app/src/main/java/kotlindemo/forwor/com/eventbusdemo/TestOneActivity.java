@@ -1,13 +1,23 @@
 package kotlindemo.forwor.com.eventbusdemo;
 
+import android.annotation.SuppressLint;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatDrawableManager;
+import android.view.View;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
+
+import java.lang.reflect.Field;
 
 import kotlindemo.forwor.com.eventbusdemo.entity.StickyEvent;
 import kotlindemo.forwor.com.eventbusdemo.utils.SpanUtils;
@@ -21,6 +31,12 @@ public class TestOneActivity extends AppCompatActivity {
         //第三步:Activity创建时注册
         EventBus.getDefault().register(this);
         TextView tv = findViewById(R.id.tv);
+        RadioButton in = findViewById(R.id.rbStockIn);
+        Drawable drawableLeft = getResources().getDrawable(R.drawable.checked_size);
+        drawableLeft.setBounds(0,0,30,30);
+        in.setCompoundDrawables(drawableLeft,null,null,null);
+        in.setButtonDrawable(drawableLeft);
+
         SpanUtils.newInstance().append("温馨提示：").setForegroundColor(getResources().getColor(R.color.colorAccent)).setFontSize(12,true).append("\n\n提交后").setForegroundColor(getResources().getColor(R.color.colorPrimary)).append("温馨提示").setForegroundColor(getResources().getColor(R.color.colorPrimaryDark)).setFontSize(16).append("请对其他规格进行价格设置，否则系统默认所有规格的价格一致。").create().build(tv);
     }
 

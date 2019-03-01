@@ -35,7 +35,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:checked="true"
-            android:button="@drawable/checked_size"
             android:text="增加库存"
             android:textSize="16sp" />
 
@@ -45,7 +44,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="减少库存"
-            android:button="@drawable/checked_size"
             android:textSize="16sp" />
     </RadioGroup>
 
