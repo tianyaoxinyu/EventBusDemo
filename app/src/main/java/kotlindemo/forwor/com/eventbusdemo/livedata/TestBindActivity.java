@@ -19,6 +19,7 @@ public class TestBindActivity extends AppCompatActivity {
          //User user = new User();
          //mTestViewModel.setUser(user);
         //需要持有同一种数据对象(binding和viewmodel)
+         mTestViewModel.setBinding(mBinding);
          mBinding.setUser(mTestViewModel.getUser().getValue());
          mBinding.setViewModel(mTestViewModel);
          mBinding.setLifecycleOwner(this);
