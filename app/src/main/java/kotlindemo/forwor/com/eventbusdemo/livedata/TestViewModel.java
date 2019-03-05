@@ -3,7 +3,6 @@ package kotlindemo.forwor.com.eventbusdemo.livedata;
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.view.View;
@@ -21,14 +20,14 @@ public class TestViewModel extends AndroidViewModel {
         super(application);
     }
 
-    public MutableLiveData<User> getUser() {//网络层获取数据
+    MutableLiveData<User> getUser() {//网络层获取数据
         User user = new User();
         user.setUserName("李四");
         setUser(user);
         return mUser;
     }
 
-    public void setUser(User user) {//这个可以不要
+    private void setUser(User user) {//这个可以不要
        mUser.setValue(user);
     }
 
@@ -38,6 +37,12 @@ public class TestViewModel extends AndroidViewModel {
         else Toast.makeText(getApplication(),"哈哈",Toast.LENGTH_SHORT).show();
         view.getContext().startActivity(new Intent(view.getContext(),TestOneActivity.class));
     }
+
+    //自定义ImageView属性
+     /* @BindingAdapter(value = {"imageUrl","error"},requireAll = false)
+    public static void loadImage(ImageView view,String url,RequestBuilder<Drawable> error) {
+       Glide.with(view.getContext()).load(url).error(error).into(view);
+    }*/
 
     @Override
     protected void onCleared() {

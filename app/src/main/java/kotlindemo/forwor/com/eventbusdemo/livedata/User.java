@@ -22,8 +22,4 @@ public class User {
         this.imgUrl = imgUrl;
     }
 
-   /* @BindingAdapter(value = {"imageUrl","error"},requireAll = false)
-    public static void loadImage(ImageView view,String url,RequestBuilder<Drawable> error) {
-       Glide.with(view.getContext()).load(url).error(error).into(view);
-    }*/
 }
