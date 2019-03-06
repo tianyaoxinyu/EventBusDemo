@@ -6,6 +6,7 @@ import android.databinding.DataBindingUtil;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import kotlindemo.forwor.com.eventbusdemo.R;
 import kotlindemo.forwor.com.eventbusdemo.databinding.ActivityTestBindBinding;
@@ -30,9 +31,11 @@ public class TestBindActivity extends AppCompatActivity {
                 mBinding.setUser(user);
             }
         };
+        //绑定观察类，我要观察谁
         mTestViewModel.getUser().observe(this, user);
         mBinding.setUser(mTestViewModel.getUser().getValue());//为databing设置数据源
         mBinding.setViewModel(mTestViewModel);
         mBinding.setLifecycleOwner(this);
+        Toast.makeText(this, "onCreated", Toast.LENGTH_SHORT).show();
     }
 }

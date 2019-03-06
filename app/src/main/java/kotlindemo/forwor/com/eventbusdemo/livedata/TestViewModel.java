@@ -32,7 +32,9 @@ public class TestViewModel extends AndroidViewModel {
             //数据变化改变UI
             mUser.getValue().setUserNick("小艾");
             //数据改变后需要重新设置，同一数据源
-            mUser.setValue(mUser.getValue());
+            //数据变化时推送给观察者
+           // mUser.setValue(mUser.getValue());//主线程
+            mUser.postValue(mUser.getValue());//子线程,数据量大时使用
             //ui上数据变化后保存到数据源
             Toast.makeText(getApplication(), mUser.getValue().getUserName(), Toast.LENGTH_SHORT).show();
             //view.getContext().startActivity(new Intent(view.getContext(),TestOneActivity.class));
