@@ -22,6 +22,7 @@ public class TestViewModel extends AndroidViewModel {
         //网络请求，然后给mUser赋值
         User user = new User();
         user.setUserName("小明");
+        user.setUserNick("雨墨");
         mUser.setValue(user);
         return mUser;
     }
@@ -29,10 +30,9 @@ public class TestViewModel extends AndroidViewModel {
     public void onBtnClick(View view) {
         if (mUser.getValue() != null) {
             //数据变化改变UI
-          /*  User user = getUser().getValue();
-            if (user != null) user.setUserName("小风");
-            mUser.setValue(user);*/
-           //ui上数据变化后保存到数据源
+            mUser.getValue().setUserNick("小艾");
+            mUser.setValue(mUser.getValue());
+            //ui上数据变化后保存到数据源
             Toast.makeText(getApplication(), mUser.getValue().getUserName(), Toast.LENGTH_SHORT).show();
             //view.getContext().startActivity(new Intent(view.getContext(),TestOneActivity.class));
         } else Toast.makeText(getApplication(), "哈哈", Toast.LENGTH_SHORT).show();

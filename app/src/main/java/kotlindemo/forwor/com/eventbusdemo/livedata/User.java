@@ -5,6 +5,7 @@ package kotlindemo.forwor.com.eventbusdemo.livedata;
 public class User {
     private String userName;
     private String imgUrl;
+    private String userNick;
 
     public String getUserName() {
         return userName;
@@ -22,4 +23,11 @@ public class User {
         this.imgUrl = imgUrl;
     }
 
+    public String getUserNick() {
+        return userNick;
+    }
+
+    public void setUserNick(String userNick) {
+        this.userNick = userNick;
+    }
 }

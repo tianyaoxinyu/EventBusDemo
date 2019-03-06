@@ -21,6 +21,11 @@
             android:layout_height="wrap_content"
             android:text="@={user.userName}"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:text="@{user.userNick}"
+            android:layout_height="wrap_content" />
+
         <Button
             android:id="@+id/button"
             android:layout_width="300dp"

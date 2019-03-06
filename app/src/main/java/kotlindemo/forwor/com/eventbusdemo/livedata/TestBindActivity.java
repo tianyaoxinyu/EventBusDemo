@@ -25,6 +25,7 @@ public class TestBindActivity extends AppCompatActivity {
         Observer<User> user = new Observer<User>() {
             @Override
             public void onChanged(@Nullable User user) {
+                //数据改变后更新UI
                 mBinding.setUser(user);
             }
         };
