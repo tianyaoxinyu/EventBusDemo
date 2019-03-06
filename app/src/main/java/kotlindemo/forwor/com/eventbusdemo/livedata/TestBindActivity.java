@@ -18,6 +18,7 @@ public class TestBindActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_test_bind);
+        //用ViewModelProviders管理viewModel，存储与销毁viewModel
         mTestViewModel = ViewModelProviders.of(this).get(TestViewModel.class);
         //User user = new User();
         //mTestViewModel.setUser(user);
