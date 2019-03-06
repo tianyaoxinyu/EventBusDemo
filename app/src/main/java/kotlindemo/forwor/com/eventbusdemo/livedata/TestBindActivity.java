@@ -36,6 +36,6 @@ public class TestBindActivity extends AppCompatActivity {
         mBinding.setUser(mTestViewModel.getUser().getValue());//为databing设置数据源
         mBinding.setViewModel(mTestViewModel);
         mBinding.setLifecycleOwner(this);
-        Toast.makeText(this, "onCreated", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "onCreated...", Toast.LENGTH_SHORT).show();
     }
 }
