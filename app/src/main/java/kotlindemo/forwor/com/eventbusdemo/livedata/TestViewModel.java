@@ -31,6 +31,7 @@ public class TestViewModel extends AndroidViewModel {
         if (mUser.getValue() != null) {
             //数据变化改变UI
             mUser.getValue().setUserNick("小艾");
+            //数据改变后需要重新设置，同一数据源
             mUser.setValue(mUser.getValue());
             //ui上数据变化后保存到数据源
             Toast.makeText(getApplication(), mUser.getValue().getUserName(), Toast.LENGTH_SHORT).show();
