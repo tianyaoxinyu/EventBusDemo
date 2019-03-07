@@ -24,6 +24,7 @@ import kotlindemo.forwor.com.eventbusdemo.R;
  */
 public class RecyclerViewModel extends AndroidViewModel {
     private MutableLiveData<List<Movie>> mList = new MutableLiveData<>();
+    //如果把adapter分离出去就需要重新写个类继承AndroidViewModel,activity或fragment要设置这个ViewModel,j可能吧
     private DataBindingUseAdapter mAdapter = new DataBindingUseAdapter(R.layout.item_recycler_bind,mList.getValue());
     public RecyclerViewModel(@NonNull Application application) {
         super(application);
@@ -53,7 +54,7 @@ public class RecyclerViewModel extends AndroidViewModel {
         this.mAdapter = mAdapter;
     }
 
-    //这玩意可能写哪都行
+    //这玩意可能写哪都行,也不一定可能要继承AndroidViewModel
    /* @BindingAdapter(value = {"rows"},requireAll = false)
     public static void setRclDirection(RecyclerView view, int rows) {
         RecyclerView.LayoutManager layoutManager = view.getLayoutManager();
