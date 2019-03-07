@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="kotlindemo.forwor.com.eventbusdemo.livedata.RecyclerViewModel"/>
+    </data>
+    <!--自定义bindingAdapter来设置自定义属性，网格布局设置行数需要自定义,反正需要什么属性就自定义什么-->
+    <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adapter="@{viewModel.adapter}"
+        app:spanCount="3"
+        app:layoutManager="android.support.v7.widget.GridLayoutManager"
+        tools:context=".livedata.RecyclerBindActivity"/>
+</layout>

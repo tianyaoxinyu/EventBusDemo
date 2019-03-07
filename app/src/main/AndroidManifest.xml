@@ -18,14 +18,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-
-        </activity>
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".MainActivity"/>
         <activity android:name=".TestOneActivity" />
         <activity android:name=".TestTwoActivity" />
-        <activity android:name=".RecyclerViewActivity"/>
-        <activity android:name=".livedata.TestBindActivity">
+        <activity android:name=".RecyclerViewActivity" />
+        <activity android:name=".livedata.TestBindActivity"/>
+        <activity android:name=".livedata.RecyclerBindActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

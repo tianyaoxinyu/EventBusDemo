@@ -3,9 +3,11 @@ package kotlindemo.forwor.com.eventbusdemo.livedata;
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.MutableLiveData;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.Toast;
+import kotlindemo.forwor.com.eventbusdemo.TestOneActivity;
 
 /**
  * Created by Myy on 2019/3/5 10:09
@@ -37,11 +39,11 @@ public class TestViewModel extends AndroidViewModel {
             mUser.postValue(mUser.getValue());//子线程,数据量大时使用
             //ui上数据变化后保存到数据源
             Toast.makeText(getApplication(), mUser.getValue().getUserName(), Toast.LENGTH_SHORT).show();
-            //view.getContext().startActivity(new Intent(view.getContext(),TestOneActivity.class));
+            view.getContext().startActivity(new Intent(view.getContext(),TestOneActivity.class));
         } else Toast.makeText(getApplication(), "哈哈", Toast.LENGTH_SHORT).show();
     }
 
-    //自定义ImageView属性
+    //自定义ImageView属性,当requireAll为false时，ImageView的xml的属性设置imageUrl与error是任何一个属性配置后都会调用loadImage方法，若不配置requireAll字段则要2个属性同时配置在一个ImageView上才会调用loadImage方法
      /* @BindingAdapter(value = {"imageUrl","error"},requireAll = false)
     public static void loadImage(ImageView view,String url,RequestBuilder<Drawable> error) {
        Glide.with(view.getContext()).load(url).error(error).into(view);
