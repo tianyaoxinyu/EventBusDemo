@@ -3,10 +3,10 @@
     <data>
         <variable
             name="movie"
-            type="kotlindemo.forwor.com.eventbusdemo.livedata.Movie"/>
+            type="kotlindemo.forwor.com.eventbusdemo.entity.Movie"/>
         <variable
             name="listener"
-            type="kotlindemo.forwor.com.eventbusdemo.livedata.DataBindingUseAdapter.OnRclClickListener"/>
+            type="kotlindemo.forwor.com.eventbusdemo.livedata.adapter.DataBindingUseAdapter.OnRclClickListener"/>
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"

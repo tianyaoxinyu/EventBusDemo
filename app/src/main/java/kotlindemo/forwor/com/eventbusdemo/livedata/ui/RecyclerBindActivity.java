@@ -1,4 +1,4 @@
-package kotlindemo.forwor.com.eventbusdemo.livedata;
+package kotlindemo.forwor.com.eventbusdemo.livedata.ui;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -11,7 +11,8 @@ import java.util.List;
 
 import kotlindemo.forwor.com.eventbusdemo.R;
 import kotlindemo.forwor.com.eventbusdemo.databinding.ActivityRecyclerBindBinding;
-import kotlindemo.forwor.com.eventbusdemo.databinding.ActivityRecyclerViewBinding;
+import kotlindemo.forwor.com.eventbusdemo.entity.Movie;
+import kotlindemo.forwor.com.eventbusdemo.livedata.viewmodel.RecyclerViewModel;
 
 public class RecyclerBindActivity extends AppCompatActivity {
 

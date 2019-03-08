@@ -3,10 +3,10 @@
     <data>
         <variable
             name="user"
-            type="kotlindemo.forwor.com.eventbusdemo.livedata.User"/>
+            type="kotlindemo.forwor.com.eventbusdemo.entity.User"/>
         <variable
             name="viewModel"
-            type="kotlindemo.forwor.com.eventbusdemo.livedata.TestViewModel"/>
+            type="kotlindemo.forwor.com.eventbusdemo.livedata.viewmodel.TestViewModel"/>
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"

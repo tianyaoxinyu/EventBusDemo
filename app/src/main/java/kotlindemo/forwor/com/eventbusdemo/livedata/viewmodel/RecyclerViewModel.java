@@ -1,30 +1,23 @@
-package kotlindemo.forwor.com.eventbusdemo.livedata;
+package kotlindemo.forwor.com.eventbusdemo.livedata.viewmodel;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.MutableLiveData;
-import android.databinding.BindingAdapter;
-import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.Toast;
-
-import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import kotlindemo.forwor.com.eventbusdemo.R;
+import kotlindemo.forwor.com.eventbusdemo.entity.Movie;
+import kotlindemo.forwor.com.eventbusdemo.livedata.adapter.DataBindingUseAdapter;
 
 /**
  * Created by Myy on 2019/3/7 14:51
  */
 public class RecyclerViewModel extends AndroidViewModel {
     private MutableLiveData<List<Movie>> mList = new MutableLiveData<>();
-    //如果把adapter分离出去就需要重新写个类继承AndroidViewModel,activity或fragment要设置这个ViewModel,j可能吧
+    //如果把adapter分离出去就需要重新写个类继承AndroidViewModel,activity或fragment要设置这个ViewModel,可能吧
     private DataBindingUseAdapter mAdapter = new DataBindingUseAdapter(R.layout.item_recycler_bind,mList.getValue());
     public RecyclerViewModel(@NonNull Application application) {
         super(application);

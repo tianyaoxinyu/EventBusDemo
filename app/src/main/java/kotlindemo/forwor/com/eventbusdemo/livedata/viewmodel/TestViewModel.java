@@ -1,4 +1,4 @@
-package kotlindemo.forwor.com.eventbusdemo.livedata;
+package kotlindemo.forwor.com.eventbusdemo.livedata.viewmodel;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.Toast;
 import kotlindemo.forwor.com.eventbusdemo.TestOneActivity;
+import kotlindemo.forwor.com.eventbusdemo.entity.User;
 
 /**
  * Created by Myy on 2019/3/5 10:09
@@ -19,7 +20,7 @@ public class TestViewModel extends AndroidViewModel {
         super(application);
     }
 
-    MutableLiveData<User> getUser() {//网络层获取数据
+    public MutableLiveData<User> getUser() {//网络层获取数据
         if (mUser == null) mUser = new MutableLiveData<>();
         //网络请求，然后给mUser赋值
         User user = new User();

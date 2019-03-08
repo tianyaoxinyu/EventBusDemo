@@ -1,4 +1,4 @@
-package kotlindemo.forwor.com.eventbusdemo.livedata;
+package kotlindemo.forwor.com.eventbusdemo.livedata.ui;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import kotlindemo.forwor.com.eventbusdemo.R;
 import kotlindemo.forwor.com.eventbusdemo.databinding.ActivityTestBindBinding;
+import kotlindemo.forwor.com.eventbusdemo.entity.User;
+import kotlindemo.forwor.com.eventbusdemo.livedata.viewmodel.TestViewModel;
 
 public class TestBindActivity extends AppCompatActivity {
     ActivityTestBindBinding mBinding;

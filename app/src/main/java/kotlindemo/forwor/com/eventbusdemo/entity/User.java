@@ -1,4 +1,4 @@
-package kotlindemo.forwor.com.eventbusdemo.livedata;
+package kotlindemo.forwor.com.eventbusdemo.entity;
 /**
  * Created by Myy on 2019/3/5 09:01
  */
