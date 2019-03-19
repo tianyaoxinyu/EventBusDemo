@@ -20,18 +20,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"/>
         <activity android:name=".TestOneActivity" />
-        <activity android:name=".TestTwoActivity" />
-        <activity android:name=".RecyclerViewActivity" />
-        <activity android:name=".livedata.ui.TestBindActivity" />
-        <activity android:name=".livedata.ui.RecyclerBindActivity">
+        <activity android:name=".TestTwoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".RecyclerViewActivity" />
+        <activity android:name=".livedata.ui.TestBindActivity" />
+        <activity android:name=".livedata.ui.RecyclerBindActivity"/>
         <activity android:name=".livedata.ui.MultiItemListActivity"/>
     </application>
 

@@ -32,6 +32,7 @@ public class DataBindingUseAdapter extends BaseQuickAdapter<Movie,BaseViewHolder
         item.position = helper.getAdapterPosition();
         if (binding != null) {
             binding.setVariable(BR.movie,item);
+            //任何属性要想起作用都要databinding绑定
             binding.setVariable(BR.listener,mListener);
             binding.executePendingBindings();
         }

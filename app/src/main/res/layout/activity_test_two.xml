@@ -1,9 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".TestTwoActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fitsSystemWindows="true"
+        android:elevation="1dp">
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="29dp"
+            android:layout_height="29dp"
+            app:srcCompat="@drawable/vector_common__back"
+            android:tint="@color/colorBackgroundSecondary"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/bg_back"
+            tools:ignore="VectorDrawableCompat" />
+        <LinearLayout
+            android:id="@+id/llLive"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/slt_btn_rect_cr15_black_trans30">
+            <ImageView
+                android:id="@+id/ivLiving"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/dp_4"
+                android:src="@drawable/image_living"/>
+            <TextView
+                android:id="@+id/tvTitleRightTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="直播/监控"
+                android:textColor="@color/colorBackgroundSecondary"
+                android:textSize="18sp"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
